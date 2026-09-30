@@ -26,7 +26,7 @@ dataset.
 **Methods:** Logistic regression · Random Forest · XGBoost · Calibration ·
 Bootstrap validation · Explainability
 
-[Project repository →](PASTE_REPOSITORY_LINK_HERE)
+[Project repository →]Coming soon!
 
 ---
 
