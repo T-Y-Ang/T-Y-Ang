@@ -1,76 +1,138 @@
-# Clinician exploring Machine Learning, AI & Computational Biology
+# Clinician Exploring Machine Learning, AI & Computational Neurosurgery
 
-I am a clinician currently working in **neurosurgery**, with a broader interest in **neuroscience, computational biology, and the application of emerging technologies to medicine**.
+I am a clinician currently working in neurosurgery, with a broader interest in neuroscience, computational biology, biomedical data science, and the application of emerging technologies to medicine.
 
-This GitHub documents my journey into **machine learning, deep learning, biomedical data science, and computational research**—from learning the fundamentals of data science and building my first models to developing increasingly rigorous projects addressing real-world clinical and biological questions.
+This GitHub documents my journey into machine learning, deep learning, computational modelling, and biomedical research — from learning the fundamentals of data science and building my first models to developing increasingly rigorous projects addressing real-world clinical and biological questions.
 
-My clinical experience shapes many of the questions I am interested in exploring computationally. In particular, I am interested in how clinical, imaging, physiological, and biological data can be used to better understand neurological disease, predict clinically meaningful outcomes, and support medical decision-making.
+My clinical experience shapes many of the questions I am interested in exploring computationally. In particular, I am interested in how clinical, imaging, physiological, and anatomical data can be used to better understand neurological disease, investigate biomechanical and haemodynamic processes, predict clinically meaningful outcomes, and support medical decision-making.
 
-My research interests have included **neuro-oncology, neuroimaging, neurocognition, cerebrovascular disease, brain-computer interface, and minimally invasive spine surgery**. Exposure to technologies such as **robotic-assisted spine surgery** has further encouraged my interest in how emerging computational and engineering technologies may influence future clinical practice.
+My research interests include neuro-oncology, neuroimaging, neurocognition, cerebrovascular disease, brain-computer interfaces, and minimally invasive spine surgery. Exposure to technologies such as robotic-assisted spine surgery has further encouraged my interest in how computational and engineering technologies may influence future clinical practice.
 
-Alongside clinical and research work, I have pursued training in **machine learning and artificial intelligence**, as well as **healthcare design and 3D printing**, as part of a broader interest in medical technology and innovation.
+Alongside clinical and research work, I have pursued training in machine learning and artificial intelligence, as well as healthcare design and 3D printing, as part of a broader interest in medical technology and innovation.
 
-My current computational work is primarily focused on **neuroscience and neurosurgically relevant problems**, while projects outside medicine provide opportunities to develop transferable technical skills across different types of data and modelling problems.
+My current computational work is primarily focused on neuroscience and neurosurgically relevant problems. More recently, I have begun exploring computational fluid dynamics and structural biomechanics alongside machine learning and deep learning, with the aim of developing a broader set of tools for investigating neurosurgical questions.
 
-Rather than presenting only finished products, I aim to document the process: **the code, experiments, unsuccessful approaches, model comparisons, evaluation methods, and lessons learned** while developing these projects.
+Rather than presenting only finished products, I aim to document the process: the code, experiments, unsuccessful approaches, model comparisons, numerical simulations, evaluation methods, and lessons learned while developing these projects.
 
 ---
 
 ## Featured Projects
 
 ### 🧠 Traumatic Brain Injury Outcome Prediction
+
 **Clinical prediction modelling | Machine learning | Explainable AI**
+
+**Status: Completed portfolio study**
 
 **Clinical question:** Can information available during the early assessment of patients with traumatic brain injury predict unfavourable functional outcome at 90 days?
 
 This project investigates conventional statistical and machine-learning approaches to clinical prognostication using clinical and neuroimaging variables from a multinational traumatic brain injury dataset.
 
-The analysis compares **logistic regression, Random Forest, and XGBoost**, with emphasis on rigorous evaluation rather than predictive performance alone. Particular attention is given to discrimination, calibration, internal validation, information leakage, missing data, and model interpretability.
+The analysis compares logistic regression, Random Forest, and XGBoost, with emphasis on rigorous evaluation rather than predictive performance alone. Particular attention is given to discrimination, calibration, internal validation, information leakage, missing data, and model interpretability.
 
-The underlying research repository remains private while the work is under active development. A standalone report presents the project in an accessible format, including its methodology, results, interpretation, and limitations.
+The underlying research repository remains private while the work is under consideration for further academic dissemination. A standalone report presents the project in an accessible format, including its methodology, results, interpretation, and limitations.
 
 **Methods:** Logistic Regression · Random Forest · XGBoost · ROC-AUC · Calibration · Brier Score · Bootstrap Validation · Explainability
 
-**→ [View TBI project report](https://github.com/T-Y-Ang/NES-AI-portfolio/blob/main/projects/tbi-outcome-prediction.md)**
+→ [View TBI project report](https://github.com/T-Y-Ang/NES-AI-portfolio/blob/main/projects/tbi-outcome-prediction.md)
 
 ---
 
 ### 🧠 Glioma MRI Segmentation
+
 **Medical imaging | Deep learning | Computational neuro-oncology**
 
-Can deep learning automatically identify and segment glioma from multimodal brain MRI?
+**Status: Completed**
 
-This project explores **deep-learning-based segmentation of glioma using multimodal MRI**, applying U-Net-based architectures to a clinically relevant neuro-oncology imaging problem.
+**Clinical question:** Can deep learning identify and segment tumour-related regions on postoperative multimodal glioma MRI?
 
-The repository documents the complete development process, including data preparation, preprocessing, model development, training, evaluation, visualisation of predicted tumour masks, and interpretation of model performance.
+This project investigates three-dimensional deep-learning segmentation of postoperative glioma MRI using a multilabel U-Net architecture and the BraTS 2024 GLI dataset.
 
-Beyond developing a segmentation model, the project explores the practical challenges involved in applying deep learning to three-dimensional medical imaging data and provides an introduction to the intersection of **neurosurgery, neuro-oncology, computer vision, and computational imaging**.
+The repository documents multimodal MRI preprocessing, model development, training, validation, held-out testing, and anatomical interpretation of segmentation errors.
 
-**Methods:** Python · PyTorch · U-Net · Multimodal MRI · Medical Image Segmentation · Dice Score · Deep Learning
+The selected model was evaluated on **198 held-out MRI examinations from 92 subjects**, with subject-level separation from the development cohorts. Validation-informed post-processing improved the four-region macro-average Dice score from **0.6525 to 0.6630**, although anatomical failure analysis identified individual cases in which segmentation performance deteriorated.
 
-**→ [View Glioma MRI Segmentation repository](https://github.com/T-Y-Ang/glioma-mri-segmentation)**
+The project highlights the importance of interpreting quantitative medical-imaging metrics alongside anatomical findings, reference annotation quality, and clinically relevant limitations.
+
+**Methods:** Python · PyTorch · MONAI · 3D U-Net · Multimodal MRI · Dice Score · Statistical Evaluation · Anatomical Failure Analysis
+
+→ [View Glioma MRI Segmentation project overview](https://github.com/T-Y-Ang/NES-AI-portfolio/blob/main/projects/glioma-mri-segmentation.md)
+
+→ [Explore the public research repository](https://github.com/T-Y-Ang/glioma-mri-segmentation)
+
+---
+
+### 🩸 Intracranial Aneurysm Haemodynamics — Computational Fluid Dynamics
+
+**Cerebrovascular haemodynamics | Computational fluid dynamics | Numerical simulation**
+
+**Status: In progress — preliminary simulations completed**
+
+**Research question:** How does intracranial aneurysm geometry influence local blood-flow behaviour, including velocity distributions, flow recirculation, and wall shear stress?
+
+This project explores computational fluid dynamics (CFD) as a method for investigating the haemodynamic environment of intracranial aneurysms.
+
+The initial phase involved constructing a synthetic three-dimensional sidewall aneurysm, generating a computational mesh, and simulating steady-state laminar blood flow using OpenFOAM.
+
+Preliminary results include:
+
+- Three-dimensional synthetic aneurysm geometry and tetrahedral meshing using Gmsh.
+- Successful OpenFOAM simulation with solver residual convergence and a global mass-conservation check.
+- Visualisation of velocity distributions, flow streamlines, apparent intra-aneurysmal recirculation, and wall shear stress.
+- Extension to a patient-derived left middle cerebral artery bifurcation aneurysm using an openly available TOF-MRA vascular dataset.
+- Generation of a patient-derived computational mesh and preliminary flow simulations, including velocity streamline and vorticity visualisations.
+
+The project is now focused on further mesh refinement, numerical verification, boundary-condition assessment, and more detailed haemodynamic analysis.
+
+These simulations are exploratory. Their purpose is to demonstrate computational workflows and investigate flow behaviour, rather than to provide clinically validated estimates of aneurysm rupture risk.
+
+**Methods:** Python · Gmsh · OpenFOAM · ParaView · Finite Volume Method · Computational Meshing · Navier–Stokes Equations · Scientific Visualisation
+
+→ [Explore the Intracranial Aneurysm CFD repository](https://github.com/T-Y-Ang/aneurysm-cfd)
 
 ---
 
 ## Planned Projects
 
-### ⚡ EEG Seizure Detection
-**Biomedical signal processing | Deep learning | Neuroscience**
+### 🦴 Spinal Biomechanics — Finite Element Analysis
 
-Detection and classification of epileptic activity using signal-processing and deep-learning methods applied to EEG data.
+**Structural biomechanics | Finite element analysis | Computational spine surgery**
 
-This project will explore the computational analysis of neurophysiological signals, including EEG preprocessing, time-series modelling, patient-level validation, and deep-learning approaches to seizure detection.
+**Status: Planned — next major project**
 
-**Planned methods:** Signal Processing · EEG · Time-Series Analysis · 1D CNN · Deep Learning
+**Research question:** How do structural defects or simulated surgical bone removal alter mechanical loading, deformation, and stiffness in spinal structures?
+
+This project will explore finite element analysis (FEA) as a computational approach to spinal biomechanics, particularly the mechanical consequences of vertebral fractures and surgical removal of stabilising anatomical structures.
+
+The initial demonstration will compare simplified intact and structurally modified models under controlled loading conditions, examining changes in stress distribution, displacement, and mechanical stiffness.
+
+The longer-term objective is to develop more anatomically representative models incorporating vertebral geometry, intervertebral discs, ligamentous constraints, facet joints, and potentially spinal instrumentation.
+
+Such models may eventually support research into post-traumatic or postoperative spinal instability, although meaningful clinical prediction would require substantially more detailed modelling and experimental validation.
+
+**Planned methods:** Finite Element Analysis · Structural Mechanics · Computational Meshing · Material Modelling · Stress and Strain Analysis · Scientific Visualisation
 
 ---
 
-### 📈 Intracranial Pressure Crisis Forecasting
+### ⚡ EEG Seizure Detection — Future Direction
+
+**Biomedical signal processing | Deep learning | Neuroscience**
+
+A future project investigating detection and classification of epileptic activity using signal-processing and deep-learning methods applied to EEG data.
+
+Potential methods include EEG preprocessing, time-series modelling, patient-level validation, and convolutional neural networks.
+
+This project has been deferred while current development efforts focus on neurovascular CFD and spinal biomechanics.
+
+---
+
+### 📈 Intracranial Pressure Crisis Forecasting — Future Direction
+
 **Physiological time series | Machine learning | Neurocritical care**
 
-Time-series modelling of physiological signals to investigate whether impending episodes of intracranial hypertension can be predicted from preceding physiological changes.
+A potential future project investigating whether episodes of intracranial hypertension can be anticipated from preceding physiological changes.
 
-This project will explore the challenges of modelling dynamic physiological data in a clinically relevant neurological setting.
+This would explore time-series modelling, longitudinal physiological data, and the challenges of predicting clinically significant deterioration.
 
 ---
 
@@ -78,9 +140,9 @@ This project will explore the challenges of modelling dynamic physiological data
 
 Alongside my clinical projects, I use non-medical datasets to explore machine learning and computational methods across different problem domains.
 
-This includes my earlier **machine-learning capstone project**, coursework, and smaller projects spanning deep learning, SQL, MLOps, and data analysis.
+This includes my earlier machine-learning capstone project, coursework, and smaller projects spanning deep learning, SQL, MLOps, and data analysis.
 
-I am also developing an exploratory project investigating **deep-learning approaches to financial time-series and candlestick price prediction**. This remains a **work in progress**, with my current development efforts prioritised toward the neuroscience and neurosurgical projects above.
+I am also developing an exploratory project investigating deep-learning approaches to financial time-series and candlestick price prediction. This remains a work in progress, with my current development efforts prioritised toward the neuroscience and neurosurgical projects above.
 
 These projects form part of the same learning process: developing a stronger understanding of computational methods themselves before considering how they can be applied appropriately to biomedical and clinical questions.
 
@@ -90,19 +152,23 @@ These projects form part of the same learning process: developing a stronger und
 
 **Neuroscience & Medicine**
 
-Neurosurgery · Neuroscience · Neuro-oncology · Neuroimaging · Neurocritical Care · Clinical Prediction
+Neurosurgery · Neuroscience · Neuro-oncology · Neuroimaging · Neurocritical Care · Cerebrovascular Disease · Spinal Surgery · Clinical Prediction
 
 **Computational & Biomedical**
 
-Computational Biology · Biomedical Data Science · Medical Imaging · Biomedical Signal Processing · Computational Neuroscience
+Computational Biology · Biomedical Data Science · Computational Neuroscience · Medical Imaging · Biomedical Signal Processing · Computational Haemodynamics · Biomechanics
 
 **Machine Learning & AI**
 
 Machine Learning · Deep Learning · Explainable AI · Natural Language Processing · Computer Vision · Time-Series Modelling
 
+**Computational Engineering & Simulation**
+
+Computational Fluid Dynamics · Finite Element Analysis · Numerical Methods · Computational Meshing · Structural Mechanics · Scientific Visualisation
+
 **Engineering & Reproducibility**
 
-Python · SQL · PyTorch · MLOps · Model Validation · Reproducible Research
+Python · SQL · PyTorch · MONAI · OpenFOAM · Gmsh · ParaView · MLOps · Model Validation · Reproducible Research
 
 **Medical Technology**
 
@@ -112,12 +178,14 @@ Artificial Intelligence in Medicine · Surgical Technology · Robotics · 3D Pri
 
 ## About This Portfolio
 
-This portfolio documents the development of my computational work as a clinician working in neurosurgery and developing skills at the intersection of **neuroscience, medicine, machine learning, and computational biology**.
+This portfolio documents the development of my computational work as a clinician working in neurosurgery and developing skills at the intersection of neuroscience, medicine, machine learning, computational biology, and engineering.
 
 **My clinical background provides the questions; computational methods provide a growing set of tools with which to investigate them.**
 
-For clinical projects, particular attention is given to methodological issues that determine whether an apparently successful model is actually meaningful: **data provenance, information leakage, missing data, appropriate validation, calibration, interpretability, and the limitations of clinical prediction models**.
+For machine-learning projects, particular attention is given to methodological issues that determine whether an apparently successful model is meaningful: data provenance, information leakage, missing data, appropriate validation, calibration, interpretability, and generalisability.
 
-The objective is not simply to build models with high performance metrics, but to understand **what the models have learned, how reliably they generalise, where they fail, and whether their predictions could ultimately be meaningful in a clinical or biological context**.
+For computational simulation projects, similar emphasis is placed on geometric assumptions, material properties, boundary conditions, mesh quality, numerical convergence, reproducibility, and the limitations of translating simulated physical behaviour into clinical conclusions.
 
-Over time, I hope this portfolio will document a progression from foundational machine-learning projects toward increasingly sophisticated work in **computational neuroscience, computational biology, medical AI, and clinically relevant translational research**.
+The objective is not simply to build models with high performance metrics or generate visually compelling simulations, but to understand what computational methods can reliably demonstrate, where they fail, and what further validation would be required before clinical application.
+
+Over time, I hope this portfolio will document a progression from foundational machine-learning projects towards increasingly sophisticated work in computational neuroscience, computational biology, medical AI, neurovascular haemodynamics, spinal biomechanics, and clinically relevant translational research.
