@@ -16,6 +16,10 @@ Rather than presenting only finished products, I aim to document the process: th
 
 ---
 
+**[Explore my Neurosurgery & Artificial Intelligence Portfolio →](https://github.com/T-Y-Ang/NES-AI-portfolio)**
+
+The portfolio provides project summaries, selected results, scientific visualisations, methodological discussions, and links to the underlying research repositories.
+
 ## Featured Projects
 
 ### 🧠 Traumatic Brain Injury Outcome Prediction
@@ -66,7 +70,7 @@ The project highlights the importance of interpreting quantitative medical-imagi
 
 **Cerebrovascular haemodynamics | Computational fluid dynamics | Numerical simulation**
 
-**Status: In progress — preliminary simulations completed**
+**Status: Exploratory study — patient-derived baseline simulation completed; temporarily paused**
 
 **Research question:** How does intracranial aneurysm geometry influence local blood-flow behaviour, including velocity distributions, flow recirculation, and wall shear stress?
 
@@ -82,37 +86,57 @@ Preliminary results include:
 - Extension to a patient-derived left middle cerebral artery bifurcation aneurysm using an openly available TOF-MRA vascular dataset.
 - Generation of a patient-derived computational mesh and preliminary flow simulations, including velocity streamline and vorticity visualisations.
 
-The project is now focused on further mesh refinement, numerical verification, boundary-condition assessment, and more detailed haemodynamic analysis.
+The patient-derived baseline simulation has been completed, including preliminary velocity streamline, vorticity, and wall shear stress visualisations. Global mass conservation was verified, and a refined computational mesh was generated for subsequent investigation.
+
+The project is temporarily paused while development focuses on spinal biomechanics. Outstanding work includes resolving outlet-geometry uncertainty, improving mesh quality, establishing mesh independence, and assessing the sensitivity of haemodynamic results to modelling assumptions.
+
+Although the computational workflow is functional, physiological validity has not been established. The current results should not be used to estimate aneurysm rupture risk or guide clinical management.
 
 These simulations are exploratory. Their purpose is to demonstrate computational workflows and investigate flow behaviour, rather than to provide clinically validated estimates of aneurysm rupture risk.
 
 **Methods:** Python · Gmsh · OpenFOAM · ParaView · Finite Volume Method · Computational Meshing · Navier–Stokes Equations · Scientific Visualisation
 
 → [Explore the Intracranial Aneurysm CFD repository](https://github.com/T-Y-Ang/aneurysm-cfd)
+→ [Read the Aneurysm CFD portfolio report](https://github.com/T-Y-Ang/NES-AI-portfolio/blob/main/projects/aneurysm-cfd.md)
+
+---
+
+### 🦴 Lumbar Spine Finite Element Analysis
+
+**Spinal biomechanics | Finite element analysis | Computational spine surgery**
+
+**Status: Exploratory study — baseline compression simulations completed; mechanical validation ongoing**
+
+**Research question:** How do vertebra–disc interface constraints influence predicted spinal stiffness and mechanical loading under axial compression?
+
+This project investigates lumbar spinal biomechanics using an existing anatomical L1–L2 finite element mesh containing two vertebral bodies and an intervening intervertebral disc.
+
+The initial computational workflow involved converting the original MED-format mesh into a CalculiX-compatible model, preparing mechanical boundary conditions, and simulating simplified axial compression.
+
+**Preliminary results include:**
+
+- Construction of a computational model containing **17,513 nodes and 62,247 tetrahedral elements**.
+- Successful completion of two axial compression simulations using a prescribed **0.1 mm displacement**.
+- Verification of approximate global axial force equilibrium.
+- Investigation of vertebra–disc interface constraints and residual untied nodes.
+- Identification of a **40.07% increase in calculated axial stiffness** following adjustment of the interface tie tolerance.
+- Geometric and topological investigation of the disc interface surfaces.
+
+The results demonstrate the importance of interface modelling in finite element analysis. However, mesh convergence and biomechanical validity have not yet been established, and the predicted stiffness and stress distributions remain sensitive to modelling assumptions.
+
+Current development is focused on mechanical verification, stress and displacement visualisation, and investigation of interface-related numerical artefacts.
+
+Longer-term objectives include reconstructing pathological spinal anatomy from CT imaging and investigating vertebral compression fractures, progressive deformity, and the biomechanical consequences of spinal interventions.
+
+**Methods:** Python · CalculiX · Finite Element Analysis · Tetrahedral Meshing · Linear Elasticity · Interface Constraints · Structural Mechanics · Scientific Visualisation
+
+→ [Read the Spinal FEA portfolio report](https://github.com/T-Y-Ang/NES-AI-portfolio/blob/main/projects/spinal-fea.md)
+
+→ [Explore the public Spinal FEA repository](https://github.com/T-Y-Ang/spinal-fea)
 
 ---
 
 ## Planned Projects
-
-### 🦴 Spinal Biomechanics — Finite Element Analysis
-
-**Structural biomechanics | Finite element analysis | Computational spine surgery**
-
-**Status: Planned — next major project**
-
-**Research question:** How do structural defects or simulated surgical bone removal alter mechanical loading, deformation, and stiffness in spinal structures?
-
-This project will explore finite element analysis (FEA) as a computational approach to spinal biomechanics, particularly the mechanical consequences of vertebral fractures and surgical removal of stabilising anatomical structures.
-
-The initial demonstration will compare simplified intact and structurally modified models under controlled loading conditions, examining changes in stress distribution, displacement, and mechanical stiffness.
-
-The longer-term objective is to develop more anatomically representative models incorporating vertebral geometry, intervertebral discs, ligamentous constraints, facet joints, and potentially spinal instrumentation.
-
-Such models may eventually support research into post-traumatic or postoperative spinal instability, although meaningful clinical prediction would require substantially more detailed modelling and experimental validation.
-
-**Planned methods:** Finite Element Analysis · Structural Mechanics · Computational Meshing · Material Modelling · Stress and Strain Analysis · Scientific Visualisation
-
----
 
 ### ⚡ EEG Seizure Detection — Future Direction
 
